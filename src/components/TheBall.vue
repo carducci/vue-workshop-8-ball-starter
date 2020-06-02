@@ -1,10 +1,13 @@
 <template>
     <div>
         <div v-on:click="shake" class="ball" v-bind:class="ballColor">
-            <TheCoverSlot v-if="isCovered"><slot></slot></TheCoverSlot>
-            <TheAnswerSlot v-if="!isCovered"><slot></slot></TheAnswerSlot>
+            <transition name="component-fade" mode="out-in">
+                <TheCoverSlot v-if="isCovered"><slot></slot></TheCoverSlot>
+            </transition>
+            <transition name="component-fade" mode="out-in">
+                <TheAnswerSlot v-if="!isCovered"/>
+            </transition>
         </div>
-        <button v-on:click="shake()">Shake It!!!</button>
     </div>
 
 </template>

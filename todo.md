@@ -15,4 +15,4 @@
 
 ###Extra Credit    
 -[ ] Add transitions
--[ ] Refactor global CSS into components
+-[x] Refactor global CSS into components
