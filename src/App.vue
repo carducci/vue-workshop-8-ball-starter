@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TheBall>8</TheBall>
+    <TheBall >8</TheBall>
   </div>
 </template>
 

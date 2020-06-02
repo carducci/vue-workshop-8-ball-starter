@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-on:click="shake" class="ball black">
+        <div v-on:click="shake" class="ball" v-bind:class="ballColor">
             <TheCoverSlot v-if="isCovered"><slot></slot></TheCoverSlot>
             <TheAnswerSlot v-if="!isCovered"><slot></slot></TheAnswerSlot>
         </div>
@@ -21,6 +21,12 @@
         data() {
             return {
                 isCovered: true
+            }
+        },
+        props: {
+            ballColor: {
+                default: "black",
+                type: String
             }
         },
         methods: {
