@@ -6,7 +6,10 @@
 -[x] Build behavior into the ball
 ##Milestone 2
 -[ ] Refactor into 3 components
-    -[ ] CoverSlot
+    -[ ] CoverSlot  
+        -[ ] Add a new component to src/componets
+        -[ ] move template over to new component
+        -[ ] Add/register component to TheBall
     -[ ] AnswerSlot
     -[ ] TheBall
 
