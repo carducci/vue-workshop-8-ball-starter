@@ -1,8 +1,8 @@
 <template>
     <div>
         <div v-on:click="shake" class="ball black">
-            <TheCoverSlot><slot></slot></TheCoverSlot>
-            <div v-if="!isCovered" class="answer-slot">{{ answer }}</div>
+            <TheCoverSlot v-if="isCovered"><slot></slot></TheCoverSlot>
+            <TheAnswerSlot v-if="!isCovered"><slot></slot></TheAnswerSlot>
         </div>
         <button v-on:click="shake()">Shake It!!!</button>
     </div>
@@ -11,27 +11,21 @@
 
 <script>
     import TheCoverSlot from "./TheCoverSlot";
+    import TheAnswerSlot from "./TheAnswerSlot";
     export default {
         components:{
-          TheCoverSlot
+          TheCoverSlot,
+            TheAnswerSlot
         },
         name: "TheBall",
         data() {
             return {
-                isCovered: true,
-                answer: "Shake to reveal your destiny..."
+                isCovered: true
             }
         },
         methods: {
-            getAnswer() {
-                Array.prototype.random = function () {
-                    return this[Math.floor(Math.random() * this.length)];
-                }
-                const answers = ["Yes", "No", "Ask Again", "Not today!"];
-                return answers.random();
-            },
             shake() {
-                this.answer = this.getAnswer();
+                this.isCovered = !this.isCovered;
             }
         }
     }
