@@ -1,6 +1,6 @@
 #Lab To Do 
 ##Milestone 1
--[ ] NPM install and run
+-[x] NPM install and run
 -[ ] Build a container component for the ball
 -[ ] Add the component to the main app component 
 -[ ] Build behavior into the ball
