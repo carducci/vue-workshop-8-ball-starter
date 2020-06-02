@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div v-on:click="shake" class="ball" v-bind:class="ballColor">
+        <div v-on:click="shake" class="ball" v-bind:class="getColor">
             <transition name="component-fade" mode="out-in">
                 <TheCoverSlot v-if="isCovered"><slot></slot></TheCoverSlot>
             </transition>
             <transition name="component-fade" mode="out-in">
-                <TheAnswerSlot v-if="!isCovered"/>
+                <TheAnswerSlot v-if="!isCovered" v-on:answered="wasAnswered" />
             </transition>
         </div>
     </div>
@@ -32,9 +32,18 @@
                 type: String
             }
         },
+        computed: {
+            getColor(){
+                const colors = ["brown", "blue", "yellow", "red", "green", "purple"];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+        },
         methods: {
             shake() {
                 this.isCovered = !this.isCovered;
+            },
+            wasAnswered(answer) {
+               console.info(`The answer was ${answer}`);
             }
         }
     }

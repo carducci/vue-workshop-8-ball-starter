@@ -8,7 +8,9 @@
         methods: {
             getAnswer() {
                 const answers = ["Yes", "No", "Ask Again", "Not today!"];
-                return answers[Math.floor(Math.random() * answers.length)];
+                const answer =  answers[Math.floor(Math.random() * answers.length)];
+                this.$emit("answered",answer);
+                return answer;
             }
         }
     }
