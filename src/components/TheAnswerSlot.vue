@@ -5,16 +5,10 @@
 <script>
     export default {
         name: "TheAnswerSlot",
-        data() {
-            return { answer: null }
-        },
         methods: {
             getAnswer() {
-                Array.prototype.random = function () {
-                    return this[Math.floor(Math.random() * this.length)];
-                }
                 const answers = ["Yes", "No", "Ask Again", "Not today!"];
-                return answers.random();
+                return answers[Math.floor(Math.random() * answers.length)];
             }
         }
     }
