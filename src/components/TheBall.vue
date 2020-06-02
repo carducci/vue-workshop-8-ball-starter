@@ -1,9 +1,10 @@
 <template>
     <div>
-        <div class="ball black">
-            <div class="answer-slot">{{ answer }}</div>
+        <div v-on:click="shake" class="ball black">
+            <div class="cover-slot"><slot></slot></div>
+
         </div>
-        <button v-on:click="shake">Shake It!!!</button>
+        <button v-on:click="shake()">Shake It!!!</button>
     </div>
 
 </template>
@@ -29,8 +30,6 @@
             }
         }
     }
-
-    //A way to shake
 
 </script>
 

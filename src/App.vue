@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-  <!--ball template goes here-->
-    <TheBall></TheBall>
+    <TheBall>7</TheBall>
   </div>
 </template>
 
