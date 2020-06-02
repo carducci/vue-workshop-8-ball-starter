@@ -1,14 +1,18 @@
 <template>
     <div class="ball black">
-    <div class="answer-slot">Hello World</div>
+    <div class="answer-slot">{{ answer }}</div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "TheBall"
+        name: "TheBall",
+        data() {
+            return {
+                answer: "applesauce"
+            }
+        }
     }
-    //see the ball
     //Put in our answers
     //A way to shake
 
