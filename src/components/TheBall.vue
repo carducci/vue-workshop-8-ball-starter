@@ -9,9 +9,16 @@
         name: "TheBall",
         data() {
             return {
-                answer: "applesauce"
+                answer: getAnswer()
             }
         }
+    }
+    function getAnswer() {
+        Array.prototype.random = function () {
+            return this[Math.floor(Math.random()*this.length)];
+        }
+        const answers = ["one", "two", "three"];
+        return answers.random();
     }
     //Put in our answers
     //A way to shake
